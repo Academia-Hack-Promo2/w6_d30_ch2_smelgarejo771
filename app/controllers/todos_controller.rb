@@ -11,7 +11,7 @@ class TodosController < ApplicationController
 	 		todo = Todo.find((params[:id].to_i))
 	 		render json: todo.to_json
 	 	else
-	 		render json: {"Error" => "El usuario no existe"}
+	 		render json: {"Error" => "Error 404 El Todo no existe"}
 	 	end
 	end
 
@@ -29,7 +29,7 @@ class TodosController < ApplicationController
 			todo.save
 			render json: todo.to_json
 		else
-			render json: {"Error" => "El usuario no existe"}
+			render json: {"Error" => "Error 404 El Todo no existe"}
 		end
 	end	
 
@@ -40,7 +40,7 @@ class TodosController < ApplicationController
 			todo.delete
 			render json: todo.to_json
 		else
-			render json: {"Error" => "El usuario no existe"}
+			render json: {"Error" => "Error 404 El Todo no existe"}
 		end
 	end
 
